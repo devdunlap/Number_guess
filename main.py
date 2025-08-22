@@ -2,6 +2,7 @@
 import random
 
 def play_game():
+    """Play a number guessing game where the user tries to guess a random number between 1 and 100."""
     number_to_guess = random.randint(1, 100)
     attempts = 0
     while True:
@@ -10,10 +11,10 @@ def play_game():
         if user_guess == number_to_guess:
             print(f"Congratulations! You've guessed the number in {attempts} attempts.")
             break
-        elif user_guess < number_to_guess:
+        if user_guess < number_to_guess:
             print("Too low! Try again.")
         else:
             print("Too high! Try again.")
 
 if __name__ == "__main__":
-    play_game() 
+    play_game()
