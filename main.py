@@ -2,7 +2,7 @@
 import random
 
 def play_game():
-    """Play a number guessing game where the user tries to guess a random number between 1 and 100."""
+    """Play a number guessing game where the user tries to guess a random number."""
     number_to_guess = random.randint(1, 100)
     attempts = 0
     while True:
