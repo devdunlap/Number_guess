@@ -1,5 +1,6 @@
 """ Number Guess game """
 import random
+from art_vars import WELCOME_ART, WIN_ART, GAME_OVER_ART
 
 def get_difficulty():
     """Get the difficulty level from the user."""
@@ -42,7 +43,8 @@ def play_game():
             attempts += 1
 
             if user_guess == number_to_guess:
-                print(f"🎉 Congratulations! You've guessed the number in {attempts} attempts.")
+                print(WIN_ART)
+                print(f"You've guessed the number in {attempts} attempts.")
                 break
             if user_guess < number_to_guess:
                 print("📈 Too low! Try again.")
@@ -51,7 +53,8 @@ def play_game():
 
             # Check if maximum attempts reached
             if attempts >= max_attempts:
-                print(f"💔 Game Over! You've used all {max_attempts} attempts.")
+                print(GAME_OVER_ART)
+                print(f"You've used all {max_attempts} attempts.")
                 print(f"The number was {number_to_guess}. Better luck next time!")
                 break
             if max_attempts != float('inf'):
@@ -63,7 +66,7 @@ def play_game():
 
 def main():
     """Main game loop with replay option."""
-    print("🎯 Welcome to the Number Guessing Game! 🎯")
+    print(WELCOME_ART)
 
     while True:
         play_game()
@@ -79,3 +82,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
